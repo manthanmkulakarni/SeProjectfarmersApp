@@ -1,0 +1,48 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "19b422780d",
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_text-siLpU9",
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"newscat\",\"value\":\"\\\"politics\\\"\"}",
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"newsflg\",\"value\":\"0\"}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "node": "fetchnews.flow.json"
+        }
+      ]
+    },
+    {
+      "id": "skill-32e18d",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-32e18d",
+      "flow": "skills/choice-32e18d.flow.json",
+      "next": [
+        {
+          "caption": "User picked [yes]",
+          "condition": "temp['skill-choice-ret'] == \"yes\"",
+          "node": ""
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"no\"",
+          "node": "commonarea.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    }
+  ]
+}

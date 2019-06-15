@@ -1,0 +1,90 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "f6b4770a2d",
+      "name": "entry",
+      "onEnter": [
+        "getnews {}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "node": "delaynode"
+        }
+      ]
+    },
+    {
+      "id": "19c618afc7",
+      "name": "delaynode",
+      "next": [
+        {
+          "condition": "true",
+          "node": "displaynews"
+        }
+      ],
+      "onEnter": [
+        "builtin/wait {\"delay\":\"1500\"}"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "7e45aaf8b6",
+      "name": "displaynews",
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice-934a22"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_carousel-wZ5_Fi",
+        "say #!builtin_carousel-WktQl-",
+        "say #!builtin_carousel-FhbOWg"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "skill-934a22",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-934a22",
+      "flow": "skills/choice-934a22.flow.json",
+      "next": [
+        {
+          "caption": "User picked [yes]",
+          "condition": "temp['skill-choice-ret'] == \"yes\"",
+          "node": "incrementCount"
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"no\"",
+          "node": "commonarea.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "entry"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "a702c5527e",
+      "name": "incrementCount",
+      "next": [
+        {
+          "condition": "true",
+          "node": "entry"
+        }
+      ],
+      "onEnter": [
+        "incrementnewsflg {}"
+      ],
+      "onReceive": null
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "builtin_single-choice-F_e7cr",
+    "formData": {
+      "text$en": "what would you wish to do ????",
+      "choices$en": [
+        {
+          "title": "Get news",
+          "value": "news"
+        },
+        {
+          "title": "Get todays astrology",
+          "value": "astrology"
+        },
+        {
+          "title": "Our web Page",
+          "value": "webpage"
+        }
+      ],
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-06-12T12:30:10.554Z",
+    "modifiedOn": "2019-06-12T12:30:10.554Z"
+  },
+  {
+    "id": "builtin_single-choice-jelIJT",
+    "formData": {
+      "text$en": "Do you want to continue with the same topic ???",
+      "choices$en": [
+        {
+          "title": "Yess",
+          "value": "yes"
+        },
+        {
+          "title": "Nooo",
+          "value": "no"
+        }
+      ],
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-06-13T10:37:08.750Z",
+    "modifiedOn": "2019-06-13T10:37:08.750Z"
+  },
+  {
+    "id": "builtin_single-choice-hWc7aV",
+    "formData": {
+      "text$en": "Choose any option from below choice .....",
+      "choices$en": [
+        {
+          "title": "Business",
+          "value": "busi"
+        },
+        {
+          "title": "City",
+          "value": "cit"
+        },
+        {
+          "title": "Crime",
+          "value": "crim"
+        },
+        {
+          "title": "Education",
+          "value": "edu"
+        },
+        {
+          "title": "Politics",
+          "value": "poli"
+        },
+        {
+          "title": "Sports",
+          "value": "spor"
+        },
+        {
+          "title": "Tech",
+          "value": "tec"
+        }
+      ],
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-06-13T11:04:54.463Z",
+    "modifiedOn": "2019-06-13T11:04:54.463Z"
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "187a96467f",
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_text-AHui0C",
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"newscat\",\"value\":\"\\\"city\\\"\"}",
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"newsflg\",\"value\":\"0\"}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "node": "fetchnews.flow.json"
+        }
+      ]
+    },
+    {
+      "id": "skill-5c16c0",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-5c16c0",
+      "flow": "skills/choice-5c16c0.flow.json",
+      "next": [
+        {
+          "caption": "User picked [yes]",
+          "condition": "temp['skill-choice-ret'] == \"yes\"",
+          "node": ""
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"no\"",
+          "node": "commonarea.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    }
+  ]
+}

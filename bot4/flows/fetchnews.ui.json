@@ -1,0 +1,131 @@
+{
+  "nodes": [
+    {
+      "id": "f6b4770a2d",
+      "position": {
+        "x": 100,
+        "y": 100
+      }
+    },
+    {
+      "id": "19c618afc7",
+      "position": {
+        "x": 340,
+        "y": 95
+      }
+    },
+    {
+      "id": "7e45aaf8b6",
+      "position": {
+        "x": 385,
+        "y": 225
+      }
+    },
+    {
+      "id": "skill-934a22",
+      "position": {
+        "x": 100,
+        "y": 370
+      }
+    },
+    {
+      "id": "a702c5527e",
+      "position": {
+        "x": 507.3999938964844,
+        "y": 476.1999969482422
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "f6b4770a2d",
+      "sourcePort": "out0",
+      "target": "19c618afc7",
+      "points": [
+        {
+          "x": 307,
+          "y": 159
+        },
+        {
+          "x": 440,
+          "y": 88
+        }
+      ]
+    },
+    {
+      "source": "19c618afc7",
+      "sourcePort": "out0",
+      "target": "7e45aaf8b6",
+      "points": [
+        {
+          "x": 547,
+          "y": 154
+        },
+        {
+          "x": 485,
+          "y": 218
+        }
+      ]
+    },
+    {
+      "source": "7e45aaf8b6",
+      "sourcePort": "out0",
+      "target": "skill-934a22",
+      "points": [
+        {
+          "x": 592,
+          "y": 390
+        },
+        {
+          "x": 200,
+          "y": 363
+        }
+      ]
+    },
+    {
+      "source": "skill-934a22",
+      "sourcePort": "out0",
+      "target": "a702c5527e",
+      "points": [
+        {
+          "x": 307,
+          "y": 419
+        },
+        {
+          "x": 607,
+          "y": 469
+        }
+      ]
+    },
+    {
+      "source": "skill-934a22",
+      "sourcePort": "out2",
+      "target": "f6b4770a2d",
+      "points": [
+        {
+          "x": 307,
+          "y": 469
+        },
+        {
+          "x": 200,
+          "y": 93
+        }
+      ]
+    },
+    {
+      "source": "a702c5527e",
+      "sourcePort": "out0",
+      "target": "f6b4770a2d",
+      "points": [
+        {
+          "x": 714,
+          "y": 535
+        },
+        {
+          "x": 200,
+          "y": 93
+        }
+      ]
+    }
+  ]
+}

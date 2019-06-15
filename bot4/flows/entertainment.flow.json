@@ -1,0 +1,56 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": [
+      {
+        "condition": "event.nlu.intent.name === 'BUSINESS'",
+        "node": "business.flow.json"
+      }
+    ],
+    "onReceive": []
+  },
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "8d1a28aebf",
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_text-2JL0dv",
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"newscat\",\"value\":\"\\\"entertainment\\\"\"}",
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"newsflg\",\"value\":\"0\"}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "node": "fetchnews.flow.json"
+        }
+      ]
+    },
+    {
+      "id": "skill-730d2f",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-730d2f",
+      "flow": "skills/choice-730d2f.flow.json",
+      "next": [
+        {
+          "caption": "User picked [yes]",
+          "condition": "temp['skill-choice-ret'] == \"yes\"",
+          "node": ""
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"no\"",
+          "node": "commonarea.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    }
+  ]
+}

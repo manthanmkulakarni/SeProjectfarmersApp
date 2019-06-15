@@ -1,0 +1,119 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": [
+      {
+        "condition": "event.nlu.intent.name === 'AUTO'",
+        "node": "auto.flow.json"
+      },
+      {
+        "condition": "event.nlu.intent.name === 'BUSINESS'",
+        "node": "business.flow.json"
+      },
+      {
+        "condition": "event.nlu.intent.name === 'CITY'",
+        "node": "city.flow.json"
+      },
+      {
+        "condition": "event.nlu.intent.name === 'CRIME'",
+        "node": "crime.flow.json"
+      },
+      {
+        "condition": "event.nlu.intent.name === 'EDUCATION'",
+        "node": "education.flow.json"
+      },
+      {
+        "condition": "event.nlu.intent.name === 'ENTERTAINMENT'",
+        "node": "entertainment.flow.json"
+      },
+      {
+        "condition": "event.nlu.intent.name === 'POLITICS'",
+        "node": "politics.flow.json"
+      },
+      {
+        "condition": "event.nlu.intent.name === 'SPORT'",
+        "node": "sports.flow.json"
+      },
+      {
+        "condition": "event.nlu.intent.name === 'TECH'",
+        "node": "tech.flow.json"
+      }
+    ],
+    "onReceive": []
+  },
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "7d64e03bb8",
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_text-G2pubt"
+      ],
+      "onReceive": [],
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice-d7bcc2"
+        }
+      ]
+    },
+    {
+      "id": "skill-d7bcc2",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-d7bcc2",
+      "flow": "skills/choice-d7bcc2.flow.json",
+      "next": [
+        {
+          "condition": "temp['skill-choice-ret'] == \"busi\"",
+          "node": "business.flow.json"
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"cit\"",
+          "node": "city.flow.json"
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"crim\"",
+          "node": "crime.flow.json"
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"edu\"",
+          "node": "education.flow.json"
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"poli\"",
+          "node": "politics.flow.json"
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"spor\"",
+          "node": "sports.flow.json"
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"tec\"",
+          "node": "tech.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "node-e6f8"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "7b58185784",
+      "name": "node-e6f8",
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice-d7bcc2"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-gxtWF5"
+      ],
+      "onReceive": null
+    }
+  ]
+}

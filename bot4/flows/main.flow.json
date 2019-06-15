@@ -1,0 +1,65 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "entry",
+      "name": "entry",
+      "next": [
+        {
+          "condition": "true",
+          "node": "mainChoice"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-rqf8cb",
+        "say #!builtin_text-eaCmuj",
+        "say #!builtin_image-5CGDw2"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "skill-5d7d33",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "mainChoice",
+      "flow": "skills/choice-5d7d33.flow.json",
+      "next": [
+        {
+          "condition": "temp['skill-choice-ret'] == \"news\"",
+          "node": "commonarea.flow.json"
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"astrology\"",
+          "node": "astro.flow.json"
+        },
+        {
+          "condition": "temp['skill-choice-ret'] == \"webpage\"",
+          "node": "AmarUjalaWebpage.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "errorMessage"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "d966aa1a96",
+      "name": "errorMessage",
+      "next": [
+        {
+          "condition": "true",
+          "node": "mainChoice"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-mjIUPH"
+      ],
+      "onReceive": null
+    }
+  ]
+}
